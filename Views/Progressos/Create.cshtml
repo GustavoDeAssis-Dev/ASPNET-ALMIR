@@ -1,0 +1,36 @@
+@model CodeBuddies.Models.Progresso
+@{ ViewData["Title"] = "Cadastrar Progresso"; }
+
+<section class="cb-form-card">
+  <div class="cb-form-head">
+    <h1>Cadastrar Progresso</h1>
+  </div>
+  <form asp-action="Create" method="post">
+    
+    <div class="cb-form-group">
+      <label asp-for="AlunoId" class="cb-form-label"></label>
+      <input asp-for="AlunoId" class="form-control" />
+      <span asp-validation-for="AlunoId" class="cb-validation"></span>
+    </div>
+    <div class="cb-form-group">
+      <label asp-for="FaseJogoId" class="cb-form-label"></label>
+      <input asp-for="FaseJogoId" class="form-control" />
+      <span asp-validation-for="FaseJogoId" class="cb-validation"></span>
+    </div>
+    <div class="cb-form-group">
+      <label asp-for="Nota" class="cb-form-label"></label>
+      <input asp-for="Nota" class="form-control" />
+      <span asp-validation-for="Nota" class="cb-validation"></span>
+    </div>
+    <div class="cb-form-group">
+      <label asp-for="Concluido" class="cb-form-label"></label>
+      <div class="form-check cb-check"><input asp-for="Concluido" class="form-check-input" /><label asp-for="Concluido" class="form-check-label"></label></div>
+      <span asp-validation-for="Concluido" class="cb-validation"></span>
+    </div>
+    <div class="cb-form-actions">
+      <button class="cb-btn cb-btn-primary" type="submit">Salvar</button>
+      <a class="cb-btn cb-btn-secondary" asp-action="Index">Voltar</a>
+    </div>
+  </form>
+</section>
+@section Scripts { <partial name="_ValidationScriptsPartial" /> }

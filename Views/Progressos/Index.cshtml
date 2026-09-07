@@ -1,0 +1,43 @@
+@model IEnumerable<CodeBuddies.Models.Progresso>
+@{ ViewData["Title"] = "Progresso"; }
+
+<section class="cb-page">
+  <div class="cb-page-head">
+    <div>
+      <h1 class="cb-page-title">Progresso</h1>
+    </div>
+    <a class="cb-btn cb-btn-primary" asp-action="Create">Novo</a>
+  </div>
+  <div class="cb-table-wrap">
+    <table class="table cb-table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>@Html.DisplayNameFor(model => model.AlunoId)</th>
+          <th>@Html.DisplayNameFor(model => model.FaseJogoId)</th>
+          <th>@Html.DisplayNameFor(model => model.Nota)</th>
+          <th>@Html.DisplayNameFor(model => model.Concluido)</th>
+          <th>Ações</th>
+        </tr>
+      </thead>
+      <tbody>
+@foreach (var item in Model) {
+        <tr>
+          <td><span class="cb-id">@item.Id</span></td>
+          <td>@Html.DisplayFor(modelItem => item.AlunoId)</td>
+          <td>@Html.DisplayFor(modelItem => item.FaseJogoId)</td>
+          <td>@Html.DisplayFor(modelItem => item.Nota)</td>
+          <td>@Html.DisplayFor(modelItem => item.Concluido)</td>
+          <td>
+            <div class="cb-actions">
+              <a class="cb-link" asp-action="Edit" asp-route-id="@item.Id">Editar</a>
+              <a class="cb-link" asp-action="Details" asp-route-id="@item.Id">Detalhes</a>
+              <a class="cb-link cb-link-danger" asp-action="Delete" asp-route-id="@item.Id">Excluir</a>
+            </div>
+          </td>
+        </tr>
+      }
+      </tbody>
+    </table>
+  </div>
+</section>

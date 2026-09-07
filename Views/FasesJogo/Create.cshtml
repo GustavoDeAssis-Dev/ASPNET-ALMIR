@@ -1,0 +1,31 @@
+@model CodeBuddies.Models.FaseJogo
+@{ ViewData["Title"] = "Cadastrar FaseJogo"; }
+
+<section class="cb-form-card">
+  <div class="cb-form-head">
+    <h1>Cadastrar FaseJogo</h1>
+  </div>
+  <form asp-action="Create" method="post">
+    
+    <div class="cb-form-group">
+      <label asp-for="TituloFase" class="cb-form-label"></label>
+      <input asp-for="TituloFase" class="form-control" />
+      <span asp-validation-for="TituloFase" class="cb-validation"></span>
+    </div>
+    <div class="cb-form-group">
+      <label asp-for="Descricao" class="cb-form-label"></label>
+      <input asp-for="Descricao" class="form-control" />
+      <span asp-validation-for="Descricao" class="cb-validation"></span>
+    </div>
+    <div class="cb-form-group">
+      <label asp-for="NivelDificuldade" class="cb-form-label"></label>
+      <input asp-for="NivelDificuldade" class="form-control" />
+      <span asp-validation-for="NivelDificuldade" class="cb-validation"></span>
+    </div>
+    <div class="cb-form-actions">
+      <button class="cb-btn cb-btn-primary" type="submit">Salvar</button>
+      <a class="cb-btn cb-btn-secondary" asp-action="Index">Voltar</a>
+    </div>
+  </form>
+</section>
+@section Scripts { <partial name="_ValidationScriptsPartial" /> }

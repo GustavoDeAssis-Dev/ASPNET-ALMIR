@@ -1,0 +1,41 @@
+@model IEnumerable<CodeBuddies.Models.Aluno>
+@{ ViewData["Title"] = "Aluno"; }
+
+<section class="cb-page">
+  <div class="cb-page-head">
+    <div>
+      <h1 class="cb-page-title">Aluno</h1>
+    </div>
+    <a class="cb-btn cb-btn-primary" asp-action="Create">Novo</a>
+  </div>
+  <div class="cb-table-wrap">
+    <table class="table cb-table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>@Html.DisplayNameFor(model => model.Nome)</th>
+          <th>@Html.DisplayNameFor(model => model.Idade)</th>
+          <th>@Html.DisplayNameFor(model => model.ProfessorId)</th>
+          <th>Ações</th>
+        </tr>
+      </thead>
+      <tbody>
+@foreach (var item in Model) {
+        <tr>
+          <td><span class="cb-id">@item.Id</span></td>
+          <td>@Html.DisplayFor(modelItem => item.Nome)</td>
+          <td>@Html.DisplayFor(modelItem => item.Idade)</td>
+          <td>@Html.DisplayFor(modelItem => item.ProfessorId)</td>
+          <td>
+            <div class="cb-actions">
+              <a class="cb-link" asp-action="Edit" asp-route-id="@item.Id">Editar</a>
+              <a class="cb-link" asp-action="Details" asp-route-id="@item.Id">Detalhes</a>
+              <a class="cb-link cb-link-danger" asp-action="Delete" asp-route-id="@item.Id">Excluir</a>
+            </div>
+          </td>
+        </tr>
+      }
+      </tbody>
+    </table>
+  </div>
+</section>

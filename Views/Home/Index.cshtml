@@ -1,0 +1,47 @@
+@{
+    ViewData["Title"] = "Início";
+}
+
+<section class="cb-home-hero">
+    <div class="cb-hero-inner">
+        <div class="cb-hero-copy">
+            <span class="cb-eyebrow">LET THE GAMES BEGIN</span>
+            <h1 class="cb-hero-title">CodeBuddies</h1>
+            <p class="cb-hero-text">Plataforma educacional gamificada para crianças de 5 a 8 anos.</p>
+            <p class="cb-hero-text">Projeto acadêmico implementado com ASP.NET Core MVC, Entity Framework Core e SQL Server, seguindo a metodologia de CRUD apresentada em sala.</p>
+        </div>
+        <div class="cb-hero-art">
+            <img src="~/images/codebuddies-hero.png" alt="CodeBuddies" />
+        </div>
+    </div>
+</section>
+
+<section class="cb-actions">
+    <div class="cb-action-grid">
+        <a class="cb-action-card" asp-controller="Professores" asp-action="Index">
+            <span class="cb-action-icon">P</span>
+            <span class="cb-action-title">Gerenciar Professores</span>
+            <span class="cb-action-arrow">+</span>
+        </a>
+        <a class="cb-action-card" asp-controller="Alunos" asp-action="Index">
+            <span class="cb-action-icon">&lt;/&gt;</span>
+            <span class="cb-action-title">Gerenciar Alunos</span>
+            <span class="cb-action-arrow">+</span>
+        </a>
+        <a class="cb-action-card" asp-controller="FasesJogo" asp-action="Index">
+            <span class="cb-action-icon">★</span>
+            <span class="cb-action-title">Gerenciar Fases</span>
+            <span class="cb-action-arrow">+</span>
+        </a>
+        <a class="cb-action-card" asp-controller="Progressos" asp-action="Index">
+            <span class="cb-action-icon">%</span>
+            <span class="cb-action-title">Gerenciar Progressos</span>
+            <span class="cb-action-arrow">+</span>
+        </a>
+        <a class="cb-action-card" asp-controller="Rankings" asp-action="Index">
+            <span class="cb-action-icon">#</span>
+            <span class="cb-action-title">Gerenciar Rankings</span>
+            <span class="cb-action-arrow">+</span>
+        </a>
+    </div>
+</section>

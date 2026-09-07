@@ -1,0 +1,31 @@
+@model CodeBuddies.Models.Ranking
+@{ ViewData["Title"] = "Cadastrar Ranking"; }
+
+<section class="cb-form-card">
+  <div class="cb-form-head">
+    <h1>Cadastrar Ranking</h1>
+  </div>
+  <form asp-action="Create" method="post">
+    
+    <div class="cb-form-group">
+      <label asp-for="AlunoId" class="cb-form-label"></label>
+      <select asp-for="AlunoId" class="form-select" asp-items="ViewBag.AlunoId"><option value="">Selecione...</option></select>
+      <span asp-validation-for="AlunoId" class="cb-validation"></span>
+    </div>
+    <div class="cb-form-group">
+      <label asp-for="Pontos" class="cb-form-label"></label>
+      <input asp-for="Pontos" class="form-control" />
+      <span asp-validation-for="Pontos" class="cb-validation"></span>
+    </div>
+    <div class="cb-form-group">
+      <label asp-for="Estrelas" class="cb-form-label"></label>
+      <input asp-for="Estrelas" class="form-control" />
+      <span asp-validation-for="Estrelas" class="cb-validation"></span>
+    </div>
+    <div class="cb-form-actions">
+      <button class="cb-btn cb-btn-primary" type="submit">Salvar</button>
+      <a class="cb-btn cb-btn-secondary" asp-action="Index">Voltar</a>
+    </div>
+  </form>
+</section>
+@section Scripts { <partial name="_ValidationScriptsPartial" /> }

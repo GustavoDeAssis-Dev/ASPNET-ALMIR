@@ -1,0 +1,8 @@
+Esta pasta fica propositalmente sem uma migration gerada pela máquina do autor.
+
+Na primeira execução, rode:
+
+dotnet ef migrations add ModelagemCompleta
+dotnet ef database update
+
+Isso faz o EF Core gerar a migration usando o SDK/EF instalado na sua máquina e aplicar o schema ao seu SQL Server.
